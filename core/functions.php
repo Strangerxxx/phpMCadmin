@@ -38,8 +38,8 @@ return $select;
 
 function plugin() {
 global $obj;
-if(!empty($_GET[disable])) echo ($obj -> call('disablePlugin', array($_GET[disable]))) ? "Плагин успешно выключен" : "Ошибка!!!";
-if(!empty($_GET[enable])) echo ($obj -> call('enablePlugin', array($_GET[enable]))) ? "Плагин успешно включен" : "Ошибка!!!";
+if(!empty($_REQUEST[disable])) echo ($obj -> call('disablePlugin', array($_REQUEST[disable]))) ? "Плагин успешно выключен" : "Ошибка!!!";
+if(!empty($_REQUEST[enable])) echo ($obj -> call('enablePlugin', array($_REQUEST[enable]))) ? "Плагин успешно включен" : "Ошибка!!!";
 }
 
 function giveItem() {
@@ -49,6 +49,6 @@ echo ($obj -> call('givePlayerItem', array($_REQUEST[player], $_REQUEST[item], $
 }
 function opPlayer() {
 global $obj;
-if(!empty($_GET[deop])) echo ($obj -> call('deopPlayer', array($_GET[deop]))) ? "У пользователя ".$_GET[deop]." успешно отобраны права оператора" : "Ошибка!!!";
-if(!empty($_GET[op])) echo ($obj -> call('opPlayer', array($_GET[op]))) ? "Пользователь ".$_GET[op]." успешно получил права оператора" : "Ошибка!!!";
+if(!empty($_REQUEST[deop])) echo ($obj -> call('deopPlayer', array($_REQUEST[deop]))) ? "У пользователя ".$_REQUEST[deop]." успешно отобраны права оператора" : "Ошибка!!!";
+if(!empty($_REQUEST[op])) echo ($obj -> call('opPlayer', array($_REQUEST[op]))) ? "Пользователь ".$_REQUEST[op]." успешно получил права оператора" : "Ошибка!!!";
 }
